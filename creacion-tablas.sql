@@ -92,9 +92,9 @@ WHERE p.titulo = 'Titanic';
 
 -----3. Consultar cuántas películas del top 100 participa Harrison Ford:
 
-SELECT COUNT(DISTINCT r.id_pelicula) 
-FROM reparto r 
-JOIN peliculas p ON r.id_pelicula = p.id 
+SELECT COUNT(DISTINCT p.id)
+FROM peliculas p
+JOIN reparto r ON p.id = r.id_pelicula
 WHERE r.actor = 'Harrison Ford';
 
 /*
@@ -103,9 +103,7 @@ WHERE r.actor = 'Harrison Ford';
 -------
      8
 (1 fila)
-
 */
-
 
 -----4. Indicar las películas estrenadas entre los años 1990 y 1999, ordenadas por título:
 
